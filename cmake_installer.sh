@@ -15,7 +15,7 @@ sed -i 's/if(CMAKE_HOST_SYSTEM_NAME STREQUAL Linux)/if(CMAKE_HOST_SYSTEM_NAME ST
 
 echo "[DEBUG] Installing cmake version \"3.23.1\" to path ${sdk_dir}/cmake/3.23.1/"
 # download cmake
-wget https://github.com/MrIkso/AndroidIDE-NDK/raw/main/cmake.zip
+wget https://github.com/arcans1998/cmake-4-androidide/raw/main/cmake.zip
 # unzip cmake
 unzip cmake.zip -d $sdk_dir
 rm cmake.zip
