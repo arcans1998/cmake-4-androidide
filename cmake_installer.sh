@@ -5,15 +5,15 @@ install_dir=$HOME
 sdk_dir=$install_dir/android-sdk
 ndk_dir=$sdk_dir/ndk/24.0.8215888
 
-echo '[NOTICE] This cmake is for aarch64 only !'
-echo '[DEBUG] Patching existing cmake config from ${ndk_dir}/build/cmake/android-legacy.toolchain.cmake'
+echo "[NOTICE] This cmake is for aarch64 only !"
+echo "[DEBUG] Patching existing cmake config from ${ndk_dir}/build/cmake/android-legacy.toolchain.cmake"
 cd $install_dir
 
 # patching cmake config
 sed -i 's/if(CMAKE_HOST_SYSTEM_NAME STREQUAL Linux)/if(CMAKE_HOST_SYSTEM_NAME STREQUAL Android)\nset(ANDROID_HOST_TAG linux-aarch64)\nelseif(CMAKE_HOST_SYSTEM_NAME STREQUAL Linux)/g' $ndk_dir/build/cmake/android-legacy.toolchain.cmake
 sed -i 's/if(CMAKE_HOST_SYSTEM_NAME STREQUAL Linux)/if(CMAKE_HOST_SYSTEM_NAME STREQUAL Android)\nset(ANDROID_HOST_TAG linux-aarch64)\nelseif(CMAKE_HOST_SYSTEM_NAME STREQUAL Linux)/g' $ndk_dir/build/cmake/android.toolchain.cmake
 
-echo '[DEBUG] Installing cmake version "3.23.1" to path ${sdk_dir}/cmake/3.23.1/'
+echo "[DEBUG] Installing cmake version \"3.23.1\" to path ${sdk_dir}/cmake/3.23.1/"
 # download cmake
 wget https://github.com/MrIkso/AndroidIDE-NDK/raw/main/cmake.zip
 # unzip cmake
